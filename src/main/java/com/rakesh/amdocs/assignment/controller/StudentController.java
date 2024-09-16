@@ -11,22 +11,19 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/api/user/profile")
+@RequestMapping("/api/v1/students")
 public class UserProfileController {
 
     private final UserProfileService userProfileService;
-
     //Solution start for problem 4
     @Autowired
     public UserProfileController(UserProfileService userProfileService) {
         this.userProfileService = userProfileService;
     }
 
-    @PutMapping("/{userId}/uploadIdPicture")
-    public ResponseEntity<String> uploadIdPicture(@PathVariable Long userId,
-                                                  @RequestParam("file") MultipartFile file) {
+    @PutMapping("/create")
+    public ResponseEntity<String> uploadIdPicture(@RequestParam("student")Student student  ) {
         try {
-            userProfileService.uploadIdPicture(userId, file);
             return ResponseEntity.ok("ID picture uploaded successfully.");
         } catch (UserNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());

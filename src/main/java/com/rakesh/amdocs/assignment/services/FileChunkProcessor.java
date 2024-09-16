@@ -3,6 +3,7 @@ package com.rakesh.amdocs.assignment.services;
 import com.rakesh.amdocs.assignment.dto.InvoiceDTO;
 import com.rakesh.amdocs.assignment.repository.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 // Class to process a chunk of the file
+@Service
 class FileChunkProcessor implements Callable<Void> {
 
     private final FileChannel fileChannel;

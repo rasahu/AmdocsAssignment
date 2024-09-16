@@ -1,5 +1,6 @@
 package com.rakesh.amdocs.assignment.services;
 
+import io.micrometer.observation.annotation.Observed;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 @Service
+@Observed
 public class InvoiceServices {
 
     private static final int CHUNK_SIZE = 1024 * 1024 * 100; // 100MB chunks (adjust as needed)

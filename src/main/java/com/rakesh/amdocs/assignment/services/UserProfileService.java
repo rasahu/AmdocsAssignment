@@ -3,6 +3,7 @@ package com.rakesh.amdocs.assignment.services;
 import com.rakesh.amdocs.assignment.dto.UserProfileDTO;
 import com.rakesh.amdocs.assignment.exception.UserNotFoundException;
 import com.rakesh.amdocs.assignment.repository.UserProfileRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Optional;
 
-@Service
+@repo
 public class UserProfileService {
 
     private final UserProfileRepository userProfileRepository;

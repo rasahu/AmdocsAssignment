@@ -1,9 +1,10 @@
 package com.rakesh.amdocs.assignment.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import lombok.*;
+
+import javax.annotation.processing.Generated;
 
 @Entity
 @Table(name = "USERProfile")
@@ -12,8 +13,10 @@ import lombok.*;
 @Data
 @EqualsAndHashCode
 @ToString
+@Builder
 public class UserProfileDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String name;
     private String email;
